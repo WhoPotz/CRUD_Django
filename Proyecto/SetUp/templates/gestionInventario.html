@@ -1,0 +1,40 @@
+{%extends "./base.html"%}{%block title%}Gestion de Inventario{%endblock%}
+
+{%block body%}
+<div class="table-responsive py-2">
+    <h1>Lista de Inventario </h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Producto</th>
+                <th>Categoria</th>
+                <th>Inventario Inicial</th>
+                <th>Inventario Recibido</th>
+                <th>Productos Vendidos</th>
+                <th>Inventario Disponible</th>
+                <th colspan="2">Opciones</th>
+            </tr>
+        <tbody>
+            {%for c in Inventario%}
+
+            <tr>
+                <td>{{c.codigo}}</td>
+                <td>{{c.producto}}</td>
+                <td>{{c.categoria}}</td>
+                <td>{{c.inventario_inicial}}</td>
+                <td>{{c.inventario_recibido}}</td>
+                <td>{{c.productos_vendido}}</td>
+                <td></td>
+                <th><a href="eliminarProducto/{{c.codigo}}" class="btn btn-danger btnEliminacion">Eliminar</a></th>
+                <th><a href="edicionProducto/{{c.codigo}}" class="btn btn-info">Editar</a></th>
+            </tr>
+            {%endfor%}
+        </tbody>
+        </thead>
+    </table>
+</div>
+
+
+
+{%endblock%}

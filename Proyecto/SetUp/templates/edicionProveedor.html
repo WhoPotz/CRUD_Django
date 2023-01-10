@@ -1,0 +1,39 @@
+{%extends "./base.html"%}{%block title%}Ingresar Producto{%endblock%}
+
+{%block body%}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Actualizar Proveedor</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/actualizarProveedor/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                    <input type="text" id="txtCodigo" name="txtCodigo" class="form-control" placeholder="Codigo" value="{{proveedor.codigo}}"
+                            minlength="6" maxlength="6" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtProveedor" name="txtProveedor" class="form-control" placeholder="Proveedor" value="{{proveedor.proveedor}}"
+                            maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtDireccion" name="txtDireccion" class="form-control" placeholder="Direccion" value="{{proveedor.direccion}}"
+                            minlength="1" maxlength="9" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtEstado" name="txtEstado" class="form-control"  placeholder="Estado" value="{{proveedor.Estado}}"
+                            minlength="1" maxlength="9" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtCodigoProducto" name="txtCodigoProducto" class="form-control" placeholder="Codigo Producto" value="{{proveedor.codigo_producto}}"
+                            minlength="1" maxlength="6" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
